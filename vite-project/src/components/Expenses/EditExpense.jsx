@@ -17,7 +17,7 @@ export default function EditExpense({ expense, onSave, onCancel }) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-beige 100vh width-full z-50">
-      <div className="bg-white w-[40%] max-h-[90vh] p-6 rounded-lg shadow-lg relative overflow-y-auto">
+      <div className="bg-white w-[55%] h-[90%] p-6 rounded-lg shadow-lg relative overflow-auto">
         <h3 className="text-title text-charcoal mb-4 font-bold">Edit Expense</h3>
         <button
           onClick={onCancel}
@@ -27,35 +27,34 @@ export default function EditExpense({ expense, onSave, onCancel }) {
           X
         </button>
 
-        <div className="py-1">
-          <label className="block text-charcoal font-bold mb-2">Name</label>
+          <label className="text-charcoal">Name</label>
           <input
             type="text"
             name="expenseName"
             value={editedExpense.expenseName}
             onChange={handleChange}
-            className="w-full p-2 mb-4 border"
+            className="shadow border rounded w-full my-2 p-1 bg-white text-charcoal"
           />
 
-          <label className="block text-charcoal font-bold mb-2">Date</label>
+          <label className="text-charcoal">Date</label>
           <input
             type="text"
             name="date"
             value={editedExpense.date}
             onChange={handleChange}
-            className="w-full p-2 mb-4 border"
+            className="shadow border rounded w-full my-2 p-1 bg-white text-charcoal"
           />
 
-          <label className="block text-charcoal font-bold mb-2">Amount</label>
+          <label className="text-charcoal ">Amount</label>
           <input
             type="number"
             name="Amount"
             value={editedExpense.Amount}
             onChange={handleChange}
-            className="w-full p-2 mb-4 border"
+            className="shadow border rounded w-full my-2 p-1 bg-white text-charcoal"
           />
 
-          <label className="block text-charcoal font-bold mb-2">Participants</label>
+          <label className="text-charcoal">Participants</label>
           <input
             type="text"
             name="participants"
@@ -69,7 +68,7 @@ export default function EditExpense({ expense, onSave, onCancel }) {
                 participants: participantsArray,
               }));
             }}
-            className="w-full p-2 mb-4 border"
+            className="shadow border rounded w-full my-2 p-1 bg-white text-charcoal"
           />
 
           {editedExpense.image && (
@@ -92,6 +91,6 @@ export default function EditExpense({ expense, onSave, onCancel }) {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 }

@@ -47,7 +47,7 @@ export default function CreateGroup(props) {
     };
 
     return (
-      <div className="fixed inset-0 flex items-center justify-center bg-beige">
+      <div className="fixed inset-0 flex items-center justify-center bg-beige 100vh width-full z-50">
         <div className="bg-white w-[55%] h-[90%] p-6 rounded-lg shadow-lg relative overflow-auto">
           <h3 className="text-title text-charcoal mb-4 font-bold">New Group</h3>
           <button
