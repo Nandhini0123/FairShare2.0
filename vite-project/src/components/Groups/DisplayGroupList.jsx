@@ -42,7 +42,7 @@ export default function DisplayGroupList(props) {
             Add New Group
           </button>
         </div>
-        <div className="flex flex-row gap-2 my-4">{groups}</div>
+        <div className="flex flex-wrap gap-4 my-4">{groups}</div>
       </div>
     );
   }
