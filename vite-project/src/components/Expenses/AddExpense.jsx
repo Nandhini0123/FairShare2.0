@@ -22,22 +22,21 @@ const AddExpense = ({ groupId, onCancel, participants, updateExpenses }) => {
       getDownloadURL(snapshot.ref).then((url) => {
         setImageUrl(url);
         alert("Image Uploaded");
-      })
-      
+      });
     });
   };
-  
+
   const viewImage = () => {
-    if(imageUrl){
+    if (imageUrl) {
       console.log("image url", imageUrl);
-      setShowImage(true)
+      setShowImage(true);
     }
-  }
+  };
   const closeImage = () => {
-    if(imageUrl){
-      setShowImage(false)
+    if (imageUrl) {
+      setShowImage(false);
     }
-  }
+  };
   const handleAdd = () => {
     const expenseData = {
       expenseName: expenseName,
@@ -63,10 +62,9 @@ const AddExpense = ({ groupId, onCancel, participants, updateExpenses }) => {
       }
       groupsData[groupIndex].expenses.push(expenseData);
       localStorage.setItem("FairShare_groupsData", JSON.stringify(groupsData));
-      
-      // Update the expenses in the parent component
+
       updateExpenses(groupsData[groupIndex].expenses);
-      
+
       onCancel();
     } else {
       console.error(`Group with ID ${groupId} not found`);
@@ -165,13 +163,21 @@ const AddExpense = ({ groupId, onCancel, participants, updateExpenses }) => {
                   setImageUpload(event.target.files[0]);
                 }}
               />
-              <button type="button" onClick={uploadImage} className="text-white bg-teal">
+              <button
+                type="button"
+                onClick={uploadImage}
+                className="text-white bg-teal"
+              >
                 Upload Receipt
               </button>
-              <button type="button" onClick={viewImage} className="text-white bg-teal">
+              <button
+                type="button"
+                onClick={viewImage}
+                className="text-white bg-teal"
+              >
                 view Receipt
               </button>
-              {showImage && imageUrl &&(
+              {showImage && imageUrl && (
                 <div>
                   <button onClick={closeImage}>close</button>
                   <img src={imageUrl} />

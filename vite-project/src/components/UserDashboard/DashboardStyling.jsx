@@ -16,9 +16,7 @@ const DashboardStyling = () => {
             className="w-10 h-10 rounded-full"
           />
         )}
-        <h2 className="text-black text-2xl font-bold">
-          {userName}
-        </h2>
+        <h2 className="text-black text-2xl font-bold">{userName}</h2>
       </div>
       <img
         src={DashboardTop}

@@ -45,13 +45,14 @@ function SignUp({ closeSignUp }) {
             <div className="flex space-x-4 mt-2">
               {avatars.map((avatar) => (
                 <img
-                  
                   key={avatar.id}
                   src={avatar.src}
                   alt={avatar.alt}
                   className={`w-12 h-12 rounded-full cursor-pointer ${
-                    selectedAvatar === avatar.src ? "border-2 border-[#68AEA7]" : ""
-                  }` }
+                    selectedAvatar === avatar.src
+                      ? "border-2 border-[#68AEA7]"
+                      : ""
+                  }`}
                   onClick={() => setSelectedAvatar(avatar.src)}
                 />
               ))}

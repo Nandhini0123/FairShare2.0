@@ -26,7 +26,10 @@ export default function DisplayGroup(props) {
 
   return (
     <div className="border shadow rounded-xl p-3 text-left relative bg-lightTeal/40 min-w-72">
-      <h3 className="text-title mb-4 font-bold hover:cursor-pointer" onClick={toggleDetails}>
+      <h3
+        className="text-title mb-4 font-bold hover:cursor-pointer"
+        onClick={toggleDetails}
+      >
         {groupName}
       </h3>
       <div className="flex flex-row absolute right-2 top-2">
