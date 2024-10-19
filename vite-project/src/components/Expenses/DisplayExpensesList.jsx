@@ -91,7 +91,6 @@ export default function DisplayExpensesList(props) {
           </div>
         ))}
 
-        {/* EditExpense Modal */}
         {editingExpense && (
           <EditExpense
             expense={editingExpense}
