@@ -25,7 +25,7 @@ export default function DisplayGroup(props) {
   };
 
   return (
-    <div className=" rounded-xl p-3 text-left relative bg-lightTeal/40 hover:shadow-lg transition-shadow min-w-72">
+    <div className="shadow rounded-xl p-3 text-left relative bg-lightTeal/40 hover:shadow-lg transition-shadow cursor-pointer min-w-72">
       <h3
         className="text-title mb-4 font-bold hover:cursor-pointer text-charcoal"
         onClick={toggleDetails}
@@ -56,7 +56,7 @@ export default function DisplayGroup(props) {
 
       <div className="flex justify-between items-center mt-6">
         <button
-          className="bg-pink shadow text-white rounded mt-8 py-1 px-4 cursor-pointer text-button"
+          className="bg-pink text-white rounded cursor-pointer px-1 py-1"
           onClick={() => setShowExpenseForm(true)}
         >
           Add Expense

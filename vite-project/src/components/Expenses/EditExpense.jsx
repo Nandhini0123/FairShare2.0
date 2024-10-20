@@ -86,7 +86,7 @@ export default function EditExpense({ expense, onSave, onCancel }) {
         <div className="flex justify-center mt-4">
           <button
             onClick={handleSave}
-            className="bg-pink shadow text-white rounded py-1 px-4 cursor-pointer text-button"
+            className="bg-pink text-white rounded cursor-pointer px-1 py-1"
           >
             Save
           </button>

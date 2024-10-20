@@ -81,10 +81,10 @@ export default function GroupDetails({ groupId, onCancel }) {
 
           <h4 className="text-charcoal font-bold mt-4">Expenses</h4>
           {groupData.expenses && groupData.expenses.length > 0 ? (
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 gap-2">
               {groupData.expenses.map((expense, index) => (
                 <div
-                  className="border shadow rounded-xl p-3 text-left relative bg-lightTeal/40 hover:shadow-lg transition-shadow cursor-pointer flex justify-between items-center"
+                  className="rounded-xl p-3 text-left relative bg-lightTeal/40 hover:shadow-lg transition-shadow cursor-pointer flex justify-between items-center"
                   key={index}
                   onClick={() => setSelectedExpense(expense)}
                 >

@@ -56,23 +56,25 @@ export default function DisplayExpensesList(props) {
         {groupsData.map((group, groupIndex) => (
           <div key={group.groupId} className="mb-6">
             <h3 className="font-bold text-lg mb-3">{group.groupName}</h3>
-            <div className="ml-4">
+            <div className="grid grid-cols-1 gap-2 ml-4 mr-4">
               {group.expenses.map((expense, expenseIndex) => (
                 <div
                   key={`${group.groupId}-${expenseIndex}`}
                   className="shadow rounded-xl p-3 text-left relative bg-lightTeal/40 hover:shadow-lg transition-shadow flex justify-between items-center"
                 >
                   <div>
-                    <p className="text-gray-700">{expense.expenseName}</p>
-                    <p className="text-gray-700">${expense.Amount}</p>
-                    <p className="text-gray-600">{expense.date}</p>
+                    <p className="text-lg text-charcoal font-bold">
+                      {expense.expenseName}
+                    </p>
+                    <p className="text-sm text-charcoal">${expense.Amount}</p>
+                    <p className="text-sm text-charcoal">{expense.date}</p>
                   </div>
                   <div className="flex space-x-2">
                     <button
                       onClick={() =>
                         handleEditExpense(groupIndex, expenseIndex)
                       }
-                      className="bg-red-500 text-white py-1 px-3 rounded"
+                      className="bg-pink text-white rounded cursor-pointer px-1 py-1"
                     >
                       Details
                     </button>
@@ -80,7 +82,7 @@ export default function DisplayExpensesList(props) {
                       onClick={() =>
                         handleDeleteExpense(groupIndex, expenseIndex)
                       }
-                      className="bg-red-500 text-white py-1 px-3 rounded"
+                      className="bg-pink text-white rounded cursor-pointer px-1 py-1"
                     >
                       Delete
                     </button>
