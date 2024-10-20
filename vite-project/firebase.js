@@ -7,7 +7,7 @@ const firebaseConfig = {
   projectId: "splithubstars",
   storageBucket: "splithubstars.appspot.com",
   messagingSenderId: "856025492605",
-  appId: "1:856025492605:web:2b4682edb83eae5be85514"
+  appId: "1:856025492605:web:2b4682edb83eae5be85514",
 };
 
 // Initialize Firebase

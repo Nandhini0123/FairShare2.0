@@ -12,13 +12,11 @@ const DashboardStyling = () => {
         {userAvatar && (
           <img
             src={userAvatar}
-            alt={userAvatarAlt || "Avatar"}
+            alt={userAvatarAlt}
             className="w-10 h-10 rounded-full"
           />
         )}
-        <h2 className="text-black text-2xl font-bold">
-          {userName || "Freddy"}
-        </h2>
+        <h2 className="text-black text-2xl font-bold">{userName}</h2>
       </div>
       <img
         src={DashboardTop}

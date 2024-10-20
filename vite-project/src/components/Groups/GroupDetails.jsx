@@ -35,92 +35,91 @@ export default function GroupDetails({ groupId, onCancel }) {
   };
 
   if (!groupData) {
-    return <p>Loading group details...</p>;
+    return (
+      <p className="text-center text-gray-500">Loading group details...</p>
+    );
   }
 
   return (
     <>
-      <div className="fixed inset-0 flex items-center justify-center bg-beige 100vh width-full z-55">
-        <div className="bg-white w-[55%] h-[60%] p-6 rounded-lg shadow-lg relative overflow-auto">
+      <div className="fixed inset-0 flex items-center justify-center bg-beige 100vh width-full z-50">
+        <div className="bg-white w-[55%] h-[90%] p-6 rounded-lg shadow-lg relative overflow-auto">
           <h3 className="text-title text-charcoal mb-4 font-bold">
             Group Details
           </h3>
           <button
             onClick={onCancel}
-            className="bg-transparent text-charcoal absolute right-0 top-0 text-button p-4"
+            className="bg-transparent text-charcoal absolute right-0 top-0 text-button p-4 hover:text-red-500"
             aria-label="close"
           >
             X
           </button>
+          <p className="mb-2">
+            <span className="text-charcoal font-bold">
+              {groupData.groupName}
+            </span>
+          </p>
+          <p className="mb-2">
+            <span className="text-charcoal font-bold">
+              {groupData.groupDescription}
+            </span>
+          </p>
+          <p className="mb-2">
+            <span className="text-charcoal font-bold">
+              ${groupData.groupBudget}
+            </span>
+          </p>
 
-          <div className="py-1">
-            <p>
-              <span className="text-charcoal font-bold">
-                {groupData.groupName}
-              </span>
-            </p>
-            <p>
-              <span className="text-charcoal font-bold">
-                {groupData.groupDescription}
-              </span>
-            </p>
-            <p>
-              <span className="text-charcoal font-bold">
-                ${groupData.groupBudget}
-              </span>
-            </p>
+          <h4 className="text-charcoal font-bold mt-4">Members</h4>
+          <ul className="list-disc pl-5 mb-4">
+            {groupData.groupMembers.map((member, index) => (
+              <li className="text-charcoal font-medium" key={index}>
+                {member}
+              </li>
+            ))}
+          </ul>
 
-            <h4 className="text-charcoal font-bold mt-4">Members</h4>
-            <ul>
-              {groupData.groupMembers.map((member, index) => (
-                <li className="text-charcoal font-bold" key={index}>
-                  {member}
-                </li>
+          <h4 className="text-charcoal font-bold mt-4">Expenses</h4>
+          {groupData.expenses && groupData.expenses.length > 0 ? (
+            <div className="grid grid-cols-1 gap-2">
+              {groupData.expenses.map((expense, index) => (
+                <div
+                  className="rounded-xl p-3 text-left relative bg-lightTeal/40 hover:shadow-lg transition-shadow cursor-pointer flex justify-between items-center"
+                  key={index}
+                  onClick={() => setSelectedExpense(expense)}
+                >
+                  <div>
+                    <p className="text-lg text-charcoal font-bold">
+                      {expense.expenseName}
+                    </p>
+                    <p className="text-sm text-charcoal">${expense.Amount}</p>
+                    <p className="text-sm text-charcoal">{expense.date}</p>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <button className="bg-pink text-white rounded cursor-pointer px-1 py-1">
+                      Details
+                    </button>
+
+                    <button className="bg-pink text-white rounded cursor-pointer px-1 py-1">
+                      Delete
+                    </button>
+                  </div>
+                </div>
               ))}
-            </ul>
-
-            <h4 className="text-charcoal font-bold mt-4">Expenses</h4>
-            {groupData.expenses && groupData.expenses.length > 0 ? (
-              <ul>
-                {groupData.expenses.map((expense, index) => (
-                  <li
-                    className="text-charcoal cursor-pointer mb-2 p-2 border-b"
-                    key={index}
-                    onClick={() => {
-                      console.log("Selected Expense: ", expense);
-                      setSelectedExpense(expense);
-                    }}
-                  >
-                    <div>
-                      <p>
-                        <strong>Name:</strong> {expense.expenseName}
-                      </p>
-                      <p>
-                        <strong>Date:</strong> {expense.date}
-                      </p>
-                      <p>
-                        <strong>Amount:</strong> ${expense.Amount}
-                      </p>
-                      <p>
-                        <strong>Participants:</strong>{" "}
-                        {expense.participants.join(", ")}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>No expenses have been added to this group yet.</p>
-            )}
-
-            <div className="flex justify-center mt-4">
-              <button
-                onClick={onCancel}
-                className="bg-pink shadow text-white rounded mt-8 py-1 px-4 cursor-pointer text-button"
-              >
-                Close
-              </button>
             </div>
+          ) : (
+            <p className="text-gray-500">
+              No expenses have been added to this group yet.
+            </p>
+          )}
+
+          <div className="flex justify-center mt-4">
+            <button
+              onClick={onCancel}
+              className="bg-pink shadow text-white rounded mt-8 py-1 px-4 cursor-pointer text-button"
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>

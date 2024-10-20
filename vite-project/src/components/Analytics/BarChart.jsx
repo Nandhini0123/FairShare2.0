@@ -1,18 +1,32 @@
-// BarChart.jsx
-import React from 'react';
-import { Bar } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import React from "react";
+import { Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const BarChart = ({ labels, data }) => {
   const chartData = {
-    labels: labels, 
+    labels: labels,
     datasets: [
       {
-        label: 'Expense',
-        data: data, 
-        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+        label: "Expense",
+        data: data,
+        backgroundColor: "rgba(75, 192, 192, 0.6)",
       },
     ],
   };
@@ -21,11 +35,11 @@ const BarChart = ({ labels, data }) => {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top',
+        position: "top",
       },
       title: {
         display: true,
-        text: 'Group Expenses',
+        text: "Group Expenses",
       },
     },
   };

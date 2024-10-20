@@ -25,11 +25,14 @@ export default function DisplayGroup(props) {
   };
 
   return (
-    <div className="border shadow rounded-xl p-3 text-left relative bg-lightTeal/40 min-w-72">
-      <h3 className="text-title mb-4 font-bold" onClick={toggleDetails}>
+    <div className="shadow rounded-xl p-3 text-left relative bg-lightTeal/40 hover:shadow-lg transition-shadow cursor-pointer min-w-72">
+      <h3
+        className="text-title mb-4 font-bold hover:cursor-pointer text-charcoal"
+        onClick={toggleDetails}
+      >
         {groupName}
       </h3>
-      <div className="flex flex-row absolute right-2 top-2">
+      <div className="flex flex-row absolute right-2 top-2 text-charcoal">
         <p className="pr-1">{props.numGroupMembers}</p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -48,12 +51,12 @@ export default function DisplayGroup(props) {
           />
         </svg>
       </div>
-      <p className="text-para mb-2">{groupDescription}</p>
-      <p className="text-para">$ Spent / {groupBudget}</p>
+      <p className="text-para mb-2 text-charcoal">{groupDescription}</p>
+      <p className="text-para text-charcoal ">$ Spent / {groupBudget}</p>
 
       <div className="flex justify-between items-center mt-6">
         <button
-          className="bg-pink shadow text-white rounded mt-8 py-1 px-4 cursor-pointer text-button"
+          className="bg-pink text-white rounded cursor-pointer px-1 py-1"
           onClick={() => setShowExpenseForm(true)}
         >
           Add Expense
@@ -61,7 +64,7 @@ export default function DisplayGroup(props) {
 
         <div>
           <button
-            className="bg-transparent p-1"
+            className="bg-transparent p-1 font-charcoal"
             onClick={() => setIsEditing(true)}
           >
             <svg
@@ -69,7 +72,7 @@ export default function DisplayGroup(props) {
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
-              stroke="currentColor"
+              stroke="#36454F"
               className="size-6"
               role="img"
             >
@@ -91,7 +94,7 @@ export default function DisplayGroup(props) {
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
-              stroke="currentColor"
+              stroke="#36454F"
               className="size-6"
               role="img"
             >
